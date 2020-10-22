@@ -17,7 +17,7 @@ port=3306
 database=DBP_LECTURE_DB
 
 # Username
-username=groot
+username=root
 
 # Password for user
-password=!mgr@0t
+password=8456
