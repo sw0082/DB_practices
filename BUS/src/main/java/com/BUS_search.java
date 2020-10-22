@@ -28,7 +28,7 @@ public class BUS_search {
              Statement db_statement = db_connection.createStatement()){
 
             // Create Tables
-            /*query_string = "CREATE TABLE `dbp_lecture_db`.`버스` (" +
+            query_string = "CREATE TABLE `dbp_lecture_db`.`버스` (" +
                     "`차량번호`         INT," +
                     "`년식`            INT," +
                     "`유지보수예정일`    DATE," +
@@ -116,7 +116,7 @@ public class BUS_search {
                     "FOREIGN KEY(`기사`) REFERENCES 운전기사(`직원번호`)," +
                     "FOREIGN KEY(`운행버스`) REFERENCES 버스(`차량번호`))";
             result = db_statement.executeUpdate(query_string);
-            System.out.println("Updated query: " + result);*/
+            System.out.println("Updated query: " + result);
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -277,15 +277,17 @@ public class BUS_search {
 
             String[] code = {"465", "465", "465", "231", "231", "412", "121", "613", "613", "956", "956",
                      "002", "002", "411", "411", "411", "112", "112", "521", "156", "251", "444", "444", "277", "888"};
-            String[] stationnmae = {"천안", "세종", "대구", "홍천", "대구", "천안", "천안", "세종", "목포", "대구", "신안",
-                    "대전", "포항", "신안", "광주", "대구", "김포", "부천", "세종", "김포", "대전", "홍천", "김포", "신안", "서울"};
-            Float[] arrivaltime = {9.40f, 10.20f, 11.50f, };
-            Float[] leavetime = {9.50f, 10.40f, 12.00f,};
+            String[] stationname = {"천안", "세종", "대구", "홍천", "대구", "천안", "천안", "세종", "목포", "대구", "신안",
+                    "대전", "포항", "신안", "광주", "대구", "김포", "부천", "세종", "김포", "대전", "홍천", "김포", "신안", "천안"};
+            Float[] arrivaltime = {9.40f, 10.20f, 11.50f, 11.50f, 15.30f, 15.30f, 12.00f, 09.20f, 09.50f, 12.20f, 14.40f,
+                    12.30f, 14.20f, 15.40f, 17.20f, 17.50f, 17.50f, 18.30f, 08.50f, 08.30f, 10.40f, 11.00f, 12.20f, 11.10f, 10.00f};
+            Float[] leavetime = {9.50f, 10.40f, 12.00f, 12.10f, 15.45f, 16.00f, 13.00f, 09.30f, 10.10f, 12.30f, 14.50f,
+                    12.40f, 14.50f, 15.55f, 17.40f, 17.55f, 18.00f, 18.45f, 09.30f, 09.00f, 20.00f, 11.10f, 12.30f, 11.20f, 10.30f};
 
             for(int i = 0; i < code.length; i++) {
                 /* Set the query statement */
                 db_statement.setString(1, code[i]);
-                db_statement.setString(2, stationnmae[i]);
+                db_statement.setString(2, stationname[i]);
                 db_statement.setFloat(3, arrivaltime[i]);
                 db_statement.setFloat(4, leavetime[i]);
                 int result = db_statement.executeUpdate();
@@ -299,8 +301,8 @@ public class BUS_search {
         try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
              PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
 
-            String[] wayname = {"서부", "인김", "광서", "포인", "서신", "부목", "세부",
-                    "대목", "인신", "울인", "부서", "세광", "인천", "목광", "김울"};
+            String[] wayname = {"서부", "서부", "광서", "포인", "서신", "부목", "세부",
+                    "대목", "인신", "울인", "부서", "세광", "인천", "목광", "목광"};
             String[] day = {"월", "화", "목", "토", "일", "월", "수", "목", "토", "토", "토", "화", "수", "화", "목"};
             Float[] leave = {9.10f, 10.30f, 12.30f, 06.10f, 07.30f, 09.50f, 11.15f,
                     13.40f, 15.35f, 17.25f, 06.45f, 08.10f, 09.55f, 10.10f, 09.45f};
@@ -316,6 +318,36 @@ public class BUS_search {
                 db_statement.setFloat(3, leave[i]);
                 db_statement.setFloat(4, arrive[i]);
                 db_statement.setString(5, via[i]);
+                int result = db_statement.executeUpdate();
+                System.out.println("Updated query: " + result);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        query_string = "INSERT INTO 운행이력 (노선명, 요일, 년도, 주, 기사, 운행버스) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            String[] waynames = {"서부", "서부", "서신", "부목", "부목", "세부",
+                    "대목", "인신", "부서", "세광", "인천", "목광", "목광", "김울", "김울"};
+            String[] days = {"월", "화", "목", "토", "일", "월", "수", "목", "토", "토", "토", "화", "수", "화", "목"};
+            int[] year = {2019, 2020, 2019, 2019, 2019, 2018, 2020, 2019,
+                    2019, 2019, 2020, 2020, 2020, 2018, 2020};
+            int[] week = {5, 16, 15, 21, 04, 50, 42, 33, 15, 18, 19, 24, 42, 17, 18};
+            int[] driver = {12484, 12484, 12484, 95187, 74321, 74321,
+                    68421, 68421, 68421, 71432, 71432, 68421, 68421, 95187, 95187};
+            int[] busnum = {1234, 2353, 8731, 1513, 1548, 7621, 7627, 7621,
+                    7616, 2353, 2353, 2353, 2342, 1234, 1234};
+
+            for(int i = 0; i < waynames.length; i++) {
+                /* Set the query statement */
+                db_statement.setString(1, waynames[i]);
+                db_statement.setString(2, days[i]);
+                db_statement.setInt(3, year[i]);
+                db_statement.setInt(4, week[i]);
+                db_statement.setInt(5, driver[i]);
+                db_statement.setInt(6, busnum[i]);
                 int result = db_statement.executeUpdate();
                 System.out.println("Updated query: " + result);
             }
