@@ -201,5 +201,126 @@ public class BUS_search {
         }catch (SQLException e) {
             e.printStackTrace();
         }
+
+        query_string = "INSERT INTO 운전기사 (직원번호, 교통위반티켓수, 운전면허종료일, 총운행거리) VALUES (?, ?, ?, ?)";
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            int[] num = {12484, 95187, 13854, 74321, 68421, 68432, 71432};
+            int[] ticket = {0, 1, 2, 0, 6, 7, 1};
+            String[] dateend = {"2028-04-01", "2027-12-01", "2030-01-01",
+                    "2024-06-01", "2020-12-01", "2027-01-01", "2026-08-01"};
+            int[] kilo = {42481, 79501, 43113, 6004, 87651, 120187, 32154};
+
+
+            for(int i = 0; i < num.length; i++) {
+                /* Set the query statement */
+                db_statement.setInt(1, num[i]);
+                db_statement.setInt(2, ticket[i]);
+                db_statement.setString(3, dateend[i]);
+                db_statement.setInt(4, kilo[i]);
+
+                int result = db_statement.executeUpdate();
+                System.out.println("Updated query: " + result);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        query_string = "INSERT INTO 정류장 (정류장명, 주소) VALUES (?, ?)";
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            String[] station = {"서울", "홍천", "인제", "대구", "대전", "부산", "포항", "울산",
+                    "천안", "김포", "부천", "인천", "세종", "광주", "목포", "신안"};
+            String[] address = {"123-4", "432-3", "33-34", "234-5", "123-9", "638-2", "123-555", "481-2",
+                    "213-89", "7435-5", "123-87", "745-66", "834-55", "125-62", "784-21", "481-21"};
+
+            for(int i = 0; i < station.length; i++) {
+                /* Set the query statement */
+                db_statement.setString(1, station[i]);
+                db_statement.setString(2, address[i]);
+
+                int result = db_statement.executeUpdate();
+                System.out.println("Updated query: " + result);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        query_string = "INSERT INTO 노선 (노선명, 출발정류장, 도착정류장) VALUES (?, ?, ?)";
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            String[] name = {"서부", "인김", "광서", "포인", "서신", "부목", "세부",
+                    "대목", "인신", "울인", "부서", "세광", "인천", "목광", "김울"};
+            String[] start = {"서울", "인제", "광주", "포항", "서울", "부산", "세종",
+                    "대구", "인천", "울산", "부천", "세종", "인제", "목포", "김포"};
+            String[] end = {"부산", "김포", "서울", "인천", "신안", "목포", "부산",
+                    "목포", "신안", "인천", "서울", "광주", "천안", "광주", "울산"};
+
+            for(int i = 0; i < name.length; i++) {
+                /* Set the query statement */
+                db_statement.setString(1, name[i]);
+                db_statement.setString(2, start[i]);
+                db_statement.setString(3, end[i]);
+                int result = db_statement.executeUpdate();
+                System.out.println("Updated query: " + result);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        query_string = "INSERT INTO 경유 (경유코드, 정류장명, 도착시간, 출발시간) VALUES (?, ?, ?, ?)";
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            String[] code = {"465", "465", "465", "231", "231", "412", "121", "613", "613", "956", "956",
+                     "002", "002", "411", "411", "411", "112", "112", "521", "156", "251", "444", "444", "277", "888"};
+            String[] stationnmae = {"천안", "세종", "대구", "홍천", "대구", "천안", "천안", "세종", "목포", "대구", "신안",
+                    "대전", "포항", "신안", "광주", "대구", "김포", "부천", "세종", "김포", "대전", "홍천", "김포", "신안", "서울"};
+            Float[] arrivaltime = {9.40f, 10.20f, 11.50f, };
+            Float[] leavetime = {9.50f, 10.40f, 12.00f,};
+
+            for(int i = 0; i < code.length; i++) {
+                /* Set the query statement */
+                db_statement.setString(1, code[i]);
+                db_statement.setString(2, stationnmae[i]);
+                db_statement.setFloat(3, arrivaltime[i]);
+                db_statement.setFloat(4, leavetime[i]);
+                int result = db_statement.executeUpdate();
+                System.out.println("Updated query: " + result);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        query_string = "INSERT INTO 운행스케줄 (노선명, 요일, 출발시간, 도착시간, 경유코드) VALUES (?, ?, ?, ?, ?)";
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            String[] wayname = {"서부", "인김", "광서", "포인", "서신", "부목", "세부",
+                    "대목", "인신", "울인", "부서", "세광", "인천", "목광", "김울"};
+            String[] day = {"월", "화", "목", "토", "일", "월", "수", "목", "토", "토", "토", "화", "수", "화", "목"};
+            Float[] leave = {9.10f, 10.30f, 12.30f, 06.10f, 07.30f, 09.50f, 11.15f,
+                    13.40f, 15.35f, 17.25f, 06.45f, 08.10f, 09.55f, 10.10f, 09.45f};
+            Float[] arrive = {15.45f, 18.30f, 22.15f, 19.30f, 20.20f, 20.30f, 20.30f,
+                    23.40f, 23.45f, 21.30f, 19.40f, 22.20f, 15.40f, 12.10f, 11.50f};
+            String[] via = {"465", "231", "412", "121", "613", "956", "002",
+                    "411", "112", "521", "156", "251", "444", "277", "888"};
+
+            for(int i = 0; i < wayname.length; i++) {
+                /* Set the query statement */
+                db_statement.setString(1, wayname[i]);
+                db_statement.setString(2, day[i]);
+                db_statement.setFloat(3, leave[i]);
+                db_statement.setFloat(4, arrive[i]);
+                db_statement.setString(5, via[i]);
+                int result = db_statement.executeUpdate();
+                System.out.println("Updated query: " + result);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
