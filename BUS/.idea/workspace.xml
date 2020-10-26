@@ -27,11 +27,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/mysql.auth" beforeDir="false" afterPath="$PROJECT_DIR$/auth/mysql.auth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/BUS_search.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/BUS_search.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/DatabaseAuthInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/DatabaseAuthInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/InsertQueryExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/InsertQueryExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/SelectQueryExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/SelectQueryExample.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/BUS_search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BUS_search.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +100,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -102,7 +111,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -204,6 +213,8 @@
       <workItem from="1603352646205" duration="1689000" />
       <workItem from="1603383661697" duration="222000" />
       <workItem from="1603383894900" duration="16213000" />
+      <workItem from="1603724287135" duration="281000" />
+      <workItem from="1603724586577" duration="7511000" />
     </task>
     <servers />
   </component>
@@ -223,46 +234,63 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603383732253">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="581" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603724597687">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state x="0" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603383732253" />
-    <state width="1877" height="383" key="GridCell.Tab.0.bottom" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="581" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2752.1112@0.0.2752.1112" timestamp="1603724597687" />
+    <state width="1666" height="303" key="GridCell.Tab.0.bottom" timestamp="1603740416753">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.0.center" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="303" key="GridCell.Tab.0.bottom/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
+    <state width="1666" height="303" key="GridCell.Tab.0.center" timestamp="1603740416753">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.0.left" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="303" key="GridCell.Tab.0.center/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
+    <state width="1666" height="303" key="GridCell.Tab.0.left" timestamp="1603740416753">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.0.right" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="303" key="GridCell.Tab.0.left/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
+    <state width="1666" height="303" key="GridCell.Tab.0.right" timestamp="1603740416753">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.1.bottom" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="303" key="GridCell.Tab.0.right/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
+    <state width="1666" height="376" key="GridCell.Tab.1.bottom" timestamp="1603737884793">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.1.center" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="376" key="GridCell.Tab.1.bottom/0.0.2752.1112@0.0.2752.1112" timestamp="1603737884793" />
+    <state width="1666" height="376" key="GridCell.Tab.1.center" timestamp="1603737884793">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.1.left" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="376" key="GridCell.Tab.1.center/0.0.2752.1112@0.0.2752.1112" timestamp="1603737884793" />
+    <state width="1666" height="376" key="GridCell.Tab.1.left" timestamp="1603737884793">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state width="1877" height="383" key="GridCell.Tab.1.right" timestamp="1603406320567">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="376" key="GridCell.Tab.1.left/0.0.2752.1112@0.0.2752.1112" timestamp="1603737884793" />
+    <state width="1666" height="376" key="GridCell.Tab.1.right" timestamp="1603737884793">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state width="1877" height="383" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
-    <state x="4" y="168" key="SettingsEditor" timestamp="1603383718485">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1666" height="376" key="GridCell.Tab.1.right/0.0.2752.1112@0.0.2752.1112" timestamp="1603737884793" />
+    <state x="6" y="180" key="SettingsEditor" timestamp="1603724316031">
+      <screen x="0" y="0" width="2752" height="1112" />
     </state>
     <state x="4" y="168" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603383718485" />
+    <state x="6" y="180" key="SettingsEditor/0.0.2752.1112@0.0.2752.1112" timestamp="1603724316031" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="db_statement" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="masterDetails">
     <states>

@@ -1,6 +1,7 @@
 package com;
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class BUS_search {
     public static void main(String[] argv) {
@@ -13,22 +14,17 @@ public class BUS_search {
                 db_info.getPort(),
                 db_info.getDatabase_name());
 
+
         //Insert Tuples to table
-        //
-        //
-        //
-
-
         // Prepare the query statement
         //String query_string = "insert into TEST_TB (, value) VALUES (?, ?)";
-
         String query_string = "1";
         // Preparation for db process
         try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
              Statement db_statement = db_connection.createStatement()){
 
             // Create Tables
-            query_string = "CREATE TABLE `dbp_lecture_db`.`버스` (" +
+            query_string = "CREATE TABLE `버스` (" +
                     "`차량번호`         INT," +
                     "`년식`            INT," +
                     "`유지보수예정일`    DATE," +
@@ -37,14 +33,14 @@ public class BUS_search {
             int result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`버스유형` (" +
+            query_string = "CREATE TABLE `버스유형` (" +
                     "`유형`             VARCHAR(45)," +
                     "`최대탑승인원`      INT," +
                     "PRIMARY KEY(`유형`))";
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`직원` (" +
+            query_string = "CREATE TABLE `직원` (" +
                     "`직원번호`         INT," +
                     "`이름`            VARCHAR(45)," +
                     "`주소`            VARCHAR(45)," +
@@ -55,7 +51,7 @@ public class BUS_search {
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`운전기사` (" +
+            query_string = "CREATE TABLE `운전기사` (" +
                     "`직원번호`         INT," +
                     "`교통위반티켓수`    INT," +
                     "`운전면허종료일`    DATE," +
@@ -65,14 +61,14 @@ public class BUS_search {
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`정류장` (" +
+            query_string = "CREATE TABLE `정류장` (" +
                     "`정류장명`         VARCHAR(45)," +
                     "`주소`            VARCHAR(45)," +
                     "PRIMARY KEY(`정류장명`))";
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`경유` (" +
+            query_string = "CREATE TABLE `경유` (" +
                     "`경유코드`         VARCHAR(45)," +
                     "`정류장명`         VARCHAR(45)," +
                     "`도착시간`         FLOAT," +
@@ -82,7 +78,7 @@ public class BUS_search {
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`노선` (" +
+            query_string = "CREATE TABLE `노선` (" +
                     "`노선명`           VARCHAR(45)," +
                     "`출발정류장`        VARCHAR(45)," +
                     "`도착정류장`        VARCHAR(45)," +
@@ -92,7 +88,7 @@ public class BUS_search {
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`운행스케줄` (" +
+            query_string = "CREATE TABLE `운행스케줄` (" +
                     "`노선명`          VARCHAR(45)," +
                     "`요일`            VARCHAR(45)," +
                     "`출발시간`         FLOAT," +
@@ -104,7 +100,7 @@ public class BUS_search {
             result = db_statement.executeUpdate(query_string);
             System.out.println("Updated query: " + result);
 
-            query_string = "CREATE TABLE `dbp_lecture_db`.`운행이력` (" +
+            query_string = "CREATE TABLE `운행이력` (" +
                     "`노선명`         VARCHAR(45)," +
                     "`요일`           VARCHAR(45)," +
                     "`년도`           INT," +
@@ -278,7 +274,7 @@ public class BUS_search {
             String[] code = {"465", "465", "465", "231", "231", "412", "121", "613", "613", "956", "956",
                      "002", "002", "411", "411", "411", "112", "112", "521", "156", "251", "444", "444", "277", "888"};
             String[] stationname = {"천안", "세종", "대구", "홍천", "대구", "천안", "천안", "세종", "목포", "대구", "신안",
-                    "대전", "포항", "신안", "광주", "대구", "김포", "부천", "세종", "김포", "대전", "홍천", "김포", "신안", "천안"};
+                    "대전", "포항", "신안", "광주", "대전", "김포", "부천", "세종", "김포", "대전", "홍천", "김포", "신안", "천안"};
             Float[] arrivaltime = {9.40f, 10.20f, 11.50f, 11.50f, 15.30f, 15.30f, 12.00f, 09.20f, 09.50f, 12.20f, 14.40f,
                     12.30f, 14.20f, 15.40f, 17.20f, 17.50f, 17.50f, 18.30f, 08.50f, 08.30f, 10.40f, 11.00f, 12.20f, 11.10f, 10.00f};
             Float[] leavetime = {9.50f, 10.40f, 12.00f, 12.10f, 15.45f, 16.00f, 13.00f, 09.30f, 10.10f, 12.30f, 14.50f,
@@ -354,5 +350,47 @@ public class BUS_search {
         }catch (SQLException e) {
             e.printStackTrace();
         }
+
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("승차정류장명: ");
+        String onStation = scan.nextLine();
+        System.out.println("하차정류장명: ");
+        String offStation = scan.nextLine();
+        System.out.println("시간: ");
+        Float inputtime = scan.nextFloat();
+
+        query_string = "select 노선명, 요일, 출발시간, t2 as 도착시간 from " +
+                "(select 노선.노선명, 요일, 운행스케줄.출발시간, 운행스케줄.도착시간 as t2, 경유.도착시간 as t1 " +
+                "from 노선, 운행스케줄, 경유 where 노선.노선명 = 운행스케줄.노선명 and 운행스케줄.경유코드 = 경유.경유코드 " +
+                "and (? = 출발정류장 or ? = 정류장명) and 운행스케줄.출발시간 > ?) as T " +
+                "where T.노선명 in ( " +
+                "select 노선.노선명 " +
+                "from 노선, 운행스케줄, 경유 " +
+                "where 노선.노선명 = 운행스케줄.노선명 and 운행스케줄.경유코드 = 경유.경유코드 " +
+                "and (? = 도착정류장 or ? = 정류장명) and 운행스케줄.출발시간 > ? and T.t1 <= 경유.도착시간) group by 노선명, 요일";
+
+        try (Connection db_connection = DriverManager.getConnection(db_connection_url, db_info.getUsername(), db_info.getPassword());
+             PreparedStatement db_statement = db_connection.prepareStatement(query_string)){
+
+            /* Set the query statement */
+            db_statement.setString(1, onStation);
+            db_statement.setString(2, onStation);
+            db_statement.setFloat(3, inputtime);
+            db_statement.setString(4, offStation);
+            db_statement.setString(5, offStation);
+            db_statement.setFloat(6, inputtime);
+            ResultSet result_set = db_statement.executeQuery();
+
+            while(result_set.next()) {
+                System.out.println("#" + "노선명:" + result_set.getString(1) +
+                        " 요일:" + result_set.getString(2) + " 출발시간: " + result_set.getFloat(3) +
+                        " 도착시간:" + result_set.getFloat(4));
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
