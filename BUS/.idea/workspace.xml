@@ -36,11 +36,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/mysql.auth" beforeDir="false" afterPath="$PROJECT_DIR$/auth/mysql.auth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/BUS_search.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/BUS_search.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/BUS_search.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/DatabaseAuthInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/DatabaseAuthInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/InsertQueryExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/InsertQueryExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/SelectQueryExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/SelectQueryExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/BUS_search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BUS_search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/InsertQueryExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/SelectQueryExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/BUS_search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/InsertQueryExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SelectQueryExample.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,9 +120,9 @@
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BUS_search">
-    <configuration name="BUS_search" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.BUS_search" />
+  <component name="RunManager" selected="Application.QRhistory_Search">
+    <configuration name="InsertQueryExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.InsertQueryExample" />
       <module name="intellj_gradle_project.main" />
       <extension name="coverage">
         <pattern>
@@ -132,8 +134,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertQueryExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.InsertQueryExample" />
+    <configuration name="QRhistory_Search" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.QRhistory_Search" />
       <module name="intellj_gradle_project.main" />
       <extension name="coverage">
         <pattern>
@@ -158,13 +160,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,9 +192,15 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.QRhistory_Search" />
+      <item itemvalue="Application.InsertQueryExample" />
+      <item itemvalue="Application.SelectQueryExample" />
+      <item itemvalue="Gradle.intellj_gradle_project [build]" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BUS_search" />
+        <item itemvalue="Application.QRhistory_Search" />
         <item itemvalue="Application.InsertQueryExample" />
         <item itemvalue="Application.SelectQueryExample" />
         <item itemvalue="Gradle.intellj_gradle_project [build]" />
@@ -215,6 +225,7 @@
       <workItem from="1603383894900" duration="16213000" />
       <workItem from="1603724287135" duration="281000" />
       <workItem from="1603724586577" duration="7511000" />
+      <workItem from="1606548758850" duration="2458000" />
     </task>
     <servers />
   </component>
@@ -234,30 +245,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="581" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603724597687">
-      <screen x="0" y="0" width="2752" height="1112" />
+    <state x="0" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606551187435">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603383732253" />
+    <state x="0" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606551187435" />
     <state x="581" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2752.1112@0.0.2752.1112" timestamp="1603724597687" />
-    <state width="1666" height="303" key="GridCell.Tab.0.bottom" timestamp="1603740416753">
-      <screen x="0" y="0" width="2752" height="1112" />
+    <state x="275" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606551186571">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="383" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
+    <state x="275" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606551186571" />
+    <state width="1244" height="277" key="GridCell.Tab.0.bottom" timestamp="1606551236762">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1244" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606551236762" />
     <state width="1666" height="303" key="GridCell.Tab.0.bottom/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
-    <state width="1666" height="303" key="GridCell.Tab.0.center" timestamp="1603740416753">
-      <screen x="0" y="0" width="2752" height="1112" />
+    <state width="1244" height="277" key="GridCell.Tab.0.center" timestamp="1606551236761">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="383" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
+    <state width="1244" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606551236761" />
     <state width="1666" height="303" key="GridCell.Tab.0.center/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
-    <state width="1666" height="303" key="GridCell.Tab.0.left" timestamp="1603740416753">
-      <screen x="0" y="0" width="2752" height="1112" />
+    <state width="1244" height="277" key="GridCell.Tab.0.left" timestamp="1606551236761">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="383" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
+    <state width="1244" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606551236761" />
     <state width="1666" height="303" key="GridCell.Tab.0.left/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
-    <state width="1666" height="303" key="GridCell.Tab.0.right" timestamp="1603740416753">
-      <screen x="0" y="0" width="2752" height="1112" />
+    <state width="1244" height="277" key="GridCell.Tab.0.right" timestamp="1606551236762">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="383" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603406320567" />
+    <state width="1244" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606551236762" />
     <state width="1666" height="303" key="GridCell.Tab.0.right/0.0.2752.1112@0.0.2752.1112" timestamp="1603740416753" />
     <state width="1666" height="376" key="GridCell.Tab.1.bottom" timestamp="1603737884793">
       <screen x="0" y="0" width="2752" height="1112" />

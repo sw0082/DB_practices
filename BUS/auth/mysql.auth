@@ -14,10 +14,10 @@ host=localhost
 port=3306
 
 # Database name
-database=dbdesing_LECTURE_DB
+database=dbp_lecture_db
 
 # Username
 username=root
 
 # Password for user
-password=passmyword1!
+password=8456
